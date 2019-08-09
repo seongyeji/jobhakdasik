@@ -15,6 +15,7 @@
                         <img src="{% static 'jobcomment/img/user.png'%}" alt="오류" class="img-circle"> <br>
                         
                         <img src="" alt="" class="img-circle"> <br>
+                        <br>
                         <a class="info" href="{% url 'login' %}">로그인</a>
                         <a class="info" href="{% url 'signup' %}">회원가입</a>
                         {% endif %} 
@@ -36,22 +37,69 @@
         <!--container-->
     </div>
 
-        <div class="container">
+        <div class="container top-250">
             <div class='row'>
                 <div class="col-md-3">
-                    <a href='' class='clickbox'>
-                        <img class="image" src="{% static 'jobcomment/img/politics.png'%}">
-                        <span>정치</span>
-                    </a>
+                    <div class="col-md-12">
+                        <a href='' class='clickbox'>
+                            <img class="image" src="{% static 'jobcomment/img/politics.png'%}">
+                            <span>정치</span>
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href='' class='clickbox'>
+                            <img class="image" src="{% static 'jobcomment/img/politics.png'%}">
+                            <span>정치</span>
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href='' class='clickbox'>
+                            <img class="image" src="{% static 'jobcomment/img/politics.png'%}">
+                            <span>정치</span>
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href='' class='clickbox'>
+                            <img class="image" src="{% static 'jobcomment/img/politics.png'%}">
+                            <span>정치</span>
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href='' class='clickbox'>
+                            <img class="image" src="{% static 'jobcomment/img/politics.png'%}">
+                            <span>정치</span>
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href='' class='clickbox'>
+                            <img class="image" src="{% static 'jobcomment/img/politics.png'%}">
+                            <span>정치</span>
+                        </a>
+                    </div>
                 </div>
                 <!--콘텐츠 시작-->
                 <div class='col-md-9'>
-                    <div class="content-detail row">
-                        <div class='content'>
+                    <div class="content-detail">
+                        <div class='content row'>
                             {% for blog in posts %}
-                                <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class='main-content' style="background-image: url( {{ blog.image.url }} ); background-size: cover;">
+                                        <div class= 'media-content'>
+                                        </div>
+                                        <div style="    padding-top: 10px;
+                                        position: sticky;
+                                        top: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        left: 0;">
+                                            <h2 style="    font-weight: 800;
+                                            color: white;
+                                            text-shadow: 1px 1px 3px black;">{{ blog.title }}</h2>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <!-- <div class="col-md-6" style="background-image: url( {{ blog.image.url }} )">
                                     <div class='card shadow-sm'>
-                                        <img src="{{ blog.image.url }}" width="100%" />
                                         <span class="card-body">
                                             <p class="card-text">제목:{{ blog.title }}</p>
                                             <p class="card-text">내용:{{ blog.summary }}</p>
@@ -62,30 +110,9 @@
                                             </span>
                                         </span>
                                     </div>
-                                </div>
+                                </div> -->
                             {% endfor %}
                         </div>
-
-                        <!--<div class="container">
-                            {% if posts.has_previous %}
-                            <a href="?page=1" class="btn btn-dark">First</a>
-                            <a href="{% url 'home'%}" class="btn btn-primary">Previous</a>
-                            {% endif %}
-
-                            <span>{{ posts.number }}</span>
-                            <span>of</span>
-                            <span>{{ posts.paginator.num_pages }}</span>
-
-                            {% if posts.has_next %}
-                            <a
-                                href="?page={{ posts.next_page_number }}"
-                                class="btn btn-primary">Next</a>
-                            <a
-                                href="?page={{ posts.paginator.num_pages }}"
-                                class="btn btn-dark"
-                                >Last</a>
-                            {% endif %}
-                        </div>-->
                     </div>
                 </div>
             </div>  
